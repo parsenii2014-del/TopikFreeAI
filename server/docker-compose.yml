@@ -1,0 +1,9 @@
+services:
+  freeai-cloud:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/data   # здесь же лежит mrkt.token; выполни: mkdir -p data && chown 1000:1000 data
